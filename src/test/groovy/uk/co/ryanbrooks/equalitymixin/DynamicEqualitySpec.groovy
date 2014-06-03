@@ -4,6 +4,9 @@ import spock.lang.Specification
 import groovy.transform.TupleConstructor
 import java.lang.Void as Should
 
+/**
+* @author Ryan Brooks
+**/
 class DynamicEqualitySpec extends Specification {
 
 	Should "fail equality without the mixin"(){

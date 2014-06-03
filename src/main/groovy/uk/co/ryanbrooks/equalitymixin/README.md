@@ -25,6 +25,10 @@ This mixin is best used to supplement external libraries which can't have the so
 
 This mixin does everything at runtime and doesn't (currently) cache the properties list. As a result it is likely to be slower than a properly implemented `equals` method or the `@EqualsAndHashCode` AST transformation.
 
+# Contributing
+
+Pull requests, issues and abuse on Twitter are all welcome!
+
 # License
 
 This project is released under the MIT License (MIT)

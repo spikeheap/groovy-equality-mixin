@@ -1,9 +1,15 @@
 package uk.co.ryanbrooks.equalitymixin
 
+/**
+ * A simple mixin class to dynamically add `equals` method to any other groovy class.
+ * Take advantage of it by using: `MyClass.mixin DynamicEquality`
+ *
+ * @author Ryan Brooks
+ **/
 class DynamicEquality {
 	@Override
 	public boolean equals(Object obj){
-		
+
 		// Bail out early if the object is null or it's not the same class
 		if(obj == null ){
 			return false
