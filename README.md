@@ -29,6 +29,14 @@ This mixin does everything at runtime and doesn't (currently) cache the properti
 
 Pull requests, issues and abuse on Twitter are all welcome!
 
+### Publishing
+To publish this to Bintray you need to update the credentials in `build.gradle` and then run the following:
+
+```bash
+$ gradle build
+$ gradle bintrayUpload
+```
+
 # License
 
 This project is released under the MIT License (MIT)

@@ -13,6 +13,9 @@ apply plugin: 'maven'
 apply plugin: 'maven-publish'
 apply plugin: 'bintray'
 
+project.version = "1.0.0"
+project.group = "uk.co.ryanbrooks.groovy"
+
 repositories {
     //mavenCentral()
     maven { url 'http://jcenter.bintray.com' }
@@ -22,3 +25,25 @@ dependencies {
     compile 'org.codehaus.groovy:groovy-all:2.3.1'
     testCompile "org.spockframework:spock-core:0.7-groovy-2.0"
 }
+
+publishing {
+    publications {
+        mavenStuff(MavenPublication) {
+            from components.java
+        }
+    }
+}
+
+bintray {
+        user = 'spikeheap'
+        key = ''
+        publications = ['mavenStuff'] // When uploading Maven-based publication files
+        pkg {
+            repo = 'maven'
+            name = 'groovy-equality-mixin'
+            desc = 'a simple mixin to build a dynamic equals(Object o) method for a class at runtime.'
+            licenses = ['MIT']
+            labels = ['groovy']
+        }
+        dryRun = false // whether to run this as dry-run, without deploying
+    }
