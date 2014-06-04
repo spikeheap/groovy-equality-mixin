@@ -31,7 +31,6 @@ class DynamicEquality {
 
 		// Find the first non-matching property
 		def inequality = propertiesToCompare.find { property ->
-			println "${property} -> ${obj[property.name]} != ${this[property.name]} "
 			obj[property.name] != this[property.name]
 		}
 		return inequality == null
