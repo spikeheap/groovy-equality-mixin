@@ -12,7 +12,7 @@ class Something {
 }
 
 // Just add the mixin and do some equality checking
-Something.mixin DynamicEquals
+Something.mixin DynamicEquality
 
 assert new Something().equals(new Something())
 ```
