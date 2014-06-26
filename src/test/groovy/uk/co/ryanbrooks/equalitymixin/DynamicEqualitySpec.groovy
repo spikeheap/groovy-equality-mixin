@@ -73,4 +73,7 @@ class Something {
 	String description
 	int age
 	String address
+
+	// We don't want to infer a property exists just because of some method name...
+	void setAwesomeness(String newAwesomeness){}
 }

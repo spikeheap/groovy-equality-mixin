@@ -23,17 +23,16 @@ class DynamicEquality {
 			return true
 		}
 
-		// We ignore property names prefixed with two underscores ('__')
-		// to prevent comparisons of meta-properties
-		def propertiesToCompare = this.metaClass.properties.findAll{ !(it.name =~ /^__/) }
+        // We ignore 'metaClass', and property names prefixed with two underscores
+        // ('__') or dollar ('$') symbols to prevent comparisons of meta-properties
+        def propertiesToCompare = this.class.declaredFields.findAll {
+            !(it.name =~ /^__/ || it.name =~ /^\$/ || it.name == "metaClass")
+        }
 
-		println propertiesToCompare
-
-		// Find the first non-matching property
-		def inequality = propertiesToCompare.find { property ->
-			println "${property} -> ${obj[property.name]} != ${this[property.name]} "
-			obj[property.name] != this[property.name]
-		}
-		return inequality == null
+        // Find the first non-matching property
+        def inequality = propertiesToCompare.find { property ->
+            obj[property.name] != this[property.name]
+        }
+        return inequality == null
 	}
 }
