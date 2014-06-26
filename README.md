@@ -17,6 +17,16 @@ Something.mixin DynamicEquality
 assert new Something().equals(new Something())
 ```
 
+### Maven
+
+To grab this library from Maven, use JCenter (see [the JCenter website for instructions](https://bintray.com/bintray/jcenter#)),
+
+The artifact details are:
+
+* artifactId: groovy-equality-mixin
+* groupId: uk.co.ryanbrooks.groovy
+
+
 ### Use case
 
 This mixin is best used to supplement external libraries which can't have the source code directly modified, but which need to be compared for equality.

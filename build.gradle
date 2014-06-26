@@ -13,7 +13,7 @@ apply plugin: 'maven'
 apply plugin: 'maven-publish'
 apply plugin: 'bintray'
 
-project.version = "1.0.1"
+project.version = "1.0.3"
 project.group = "uk.co.ryanbrooks.groovy"
 
 repositories {
