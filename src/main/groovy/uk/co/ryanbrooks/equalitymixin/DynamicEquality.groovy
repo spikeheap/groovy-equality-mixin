@@ -7,21 +7,21 @@ package uk.co.ryanbrooks.equalitymixin
  * @author Ryan Brooks
  **/
 class DynamicEquality {
-	@Override
-	public boolean equals(Object obj){
+    @Override
+    public boolean equals(Object obj){
 
-		// Bail out early if the object is null or it's not the same class
-		if(obj == null ){
-			return false
-		}
-		if(!(obj.class == this.class)) {
-			return false
-		}
+        // Bail out early if the object is null or it's not the same class
+        if(obj == null ){
+            return false
+        }
+        if(!(obj.class == this.class)) {
+            return false
+        }
 
-		// Are they references to the same object?
-		if(this.is(obj)){
-			return true
-		}
+        // Are they references to the same object?
+        if(this.is(obj)){
+            return true
+        }
 
         // We ignore 'metaClass', and property names prefixed with two underscores
         // ('__') or dollar ('$') symbols to prevent comparisons of meta-properties
@@ -34,5 +34,5 @@ class DynamicEquality {
             obj[property.name] != this[property.name]
         }
         return inequality == null
-	}
+    }
 }
